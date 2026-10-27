@@ -22,7 +22,7 @@ export function AuthProvider({ children }) {
 
   const authId = session?.user?.id
   // 로그아웃하거나 계정이 바뀌면 이전 프로필은 자동으로 무시됨
-  const profile = profileState?.authId === authId ? profileState.data : null
+  const profile = authId && profileState?.authId === authId ? profileState.data : null
 
   useEffect(() => {
     if (!authId) return
