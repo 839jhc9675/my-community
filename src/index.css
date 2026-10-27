@@ -1,0 +1,255 @@
+/* ===== 헬스메이트 테마: 원색(파랑·빨강·노랑) 운동 동호회 ===== */
+:root {
+  --blue: #1d4ed8;
+  --blue-dark: #1e3a8a;
+  --blue-soft: #e8efff;
+  --red: #e11d2e;
+  --red-dark: #b91c1c;
+  --yellow: #facc15;
+  --yellow-dark: #eab308;
+  --ink: #111827;
+  --text: #374151;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --radius: 12px;
+  --shadow: 0 4px 0 rgba(17, 24, 39, 0.08), 0 8px 24px rgba(17, 24, 39, 0.06);
+
+  font-family: 'Noto Sans KR', system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: var(--bg); }
+#root { display: flex; flex-direction: column; min-height: 100vh; }
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+h1, h2, h3 { color: var(--ink); margin: 0; }
+
+.container { width: 100%; max-width: 1040px; margin: 0 auto; padding: 24px 16px 48px; flex: 1; }
+
+/* ===== 버튼 ===== */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 10px 18px; border: 2px solid transparent; border-radius: 10px;
+  font: inherit; font-weight: 700; font-size: 15px; cursor: pointer;
+  text-decoration: none !important; white-space: nowrap;
+  transition: transform 0.1s, box-shadow 0.1s, background 0.15s;
+}
+.btn:active:not(:disabled) { transform: translateY(2px); }
+.btn:disabled { opacity: 0.55; cursor: not-allowed; }
+.btn-blue { background: var(--blue); color: #fff; box-shadow: 0 3px 0 var(--blue-dark); }
+.btn-blue:hover:not(:disabled) { background: #2563eb; }
+.btn-red { background: var(--red); color: #fff; box-shadow: 0 3px 0 var(--red-dark); }
+.btn-red:hover:not(:disabled) { background: #ef4444; }
+.btn-yellow { background: var(--yellow); color: var(--ink); box-shadow: 0 3px 0 var(--yellow-dark); }
+.btn-yellow:hover:not(:disabled) { background: #fde047; }
+.btn-ghost { background: #fff; color: var(--ink); border-color: var(--line); }
+.btn-ghost:hover:not(:disabled) { border-color: var(--ink); }
+.btn-ghost.danger { color: var(--red); }
+.btn-ghost.danger:hover { border-color: var(--red); }
+.btn-block { width: 100%; }
+.btn-lg { padding: 14px 24px; font-size: 17px; }
+.link-btn { background: none; border: 0; padding: 0; color: var(--muted); font: inherit; font-size: 13px; cursor: pointer; }
+.link-btn:hover { color: var(--red); text-decoration: underline; }
+
+/* ===== 헤더 ===== */
+.header { background: var(--blue); position: sticky; top: 0; z-index: 10; }
+.header-inner {
+  max-width: 1040px; margin: 0 auto; padding: 12px 16px;
+  display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+}
+.logo {
+  font-family: 'Black Han Sans', sans-serif; font-size: 28px; color: #fff;
+  letter-spacing: 0.5px; text-decoration: none !important; display: flex; align-items: center; gap: 6px;
+}
+.logo-mark { font-size: 24px; }
+.nav { display: flex; gap: 4px; flex: 1; }
+.nav a { color: #dbeafe; font-weight: 700; padding: 8px 14px; border-radius: 8px; text-decoration: none; }
+.nav a:hover { background: rgba(255, 255, 255, 0.12); color: #fff; }
+.nav a.active { background: var(--yellow); color: var(--ink); }
+.header-user { display: flex; align-items: center; gap: 10px; }
+.hello { color: #fff; font-size: 14px; }
+.header-user .btn { padding: 7px 14px; font-size: 14px; }
+.stripe { display: flex; height: 6px; }
+.stripe span { flex: 1; }
+.stripe span:nth-child(1) { background: var(--red); }
+.stripe span:nth-child(2) { background: var(--yellow); }
+.stripe span:nth-child(3) { background: var(--blue-dark); }
+
+.footer { text-align: center; padding: 24px 16px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); background: #fff; }
+
+/* ===== 메인 히어로 ===== */
+.hero {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+  background: var(--red); color: #fff; border-radius: var(--radius);
+  padding: 28px 32px; margin-bottom: 24px; box-shadow: var(--shadow);
+  background-image: repeating-linear-gradient(-45deg, rgba(255,255,255,0.06) 0 14px, transparent 14px 28px);
+}
+.hero-kicker { margin: 0; font-weight: 900; letter-spacing: 3px; font-size: 12px; color: var(--yellow); }
+.hero-title { font-family: 'Black Han Sans', sans-serif; font-weight: 400; color: #fff; font-size: clamp(26px, 4vw, 38px); line-height: 1.25; margin: 4px 0 8px; }
+.hl-yellow { color: var(--yellow); }
+.hero-desc { margin: 0; color: #fee2e2; }
+
+/* ===== 게시판 ===== */
+.board, .panel, .detail, .auth-card { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); }
+.board { padding: 20px 24px 24px; }
+.board-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+.board-title { font-size: 20px; font-weight: 900; }
+.count { color: var(--red); font-weight: 900; }
+.search { display: flex; gap: 6px; }
+.search input { width: 200px; }
+
+.board-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.board-table thead th {
+  border-top: 3px solid var(--blue); border-bottom: 1px solid var(--line);
+  padding: 10px 8px; font-weight: 700; color: var(--ink); background: var(--blue-soft);
+}
+.board-table td { border-bottom: 1px solid var(--line); padding: 12px 8px; text-align: center; }
+.board-table tbody tr:hover { background: #fffbea; }
+.board-table .col-title { text-align: left; }
+.col-title a { color: var(--ink); font-weight: 500; }
+.col-no { width: 64px; color: var(--muted); }
+.col-author { width: 110px; }
+.col-date { width: 100px; color: var(--muted); }
+.col-num { width: 64px; color: var(--muted); }
+.cmt-count { color: var(--red); font-weight: 700; margin-left: 6px; font-size: 13px; }
+.tag-img { margin-left: 6px; font-size: 13px; }
+.mobile-meta { display: none; }
+
+.pagination { display: flex; justify-content: center; gap: 4px; margin-top: 20px; flex-wrap: wrap; }
+.pagination button {
+  min-width: 34px; height: 34px; border: 1px solid var(--line); background: #fff; border-radius: 8px;
+  font: inherit; cursor: pointer;
+}
+.pagination button.active { background: var(--blue); color: #fff; border-color: var(--blue); font-weight: 700; }
+
+.empty { text-align: center; color: var(--muted); padding: 40px 16px; }
+
+/* ===== 폼 공통 ===== */
+input, textarea {
+  width: 100%; padding: 10px 12px; border: 2px solid var(--line); border-radius: 10px;
+  font: inherit; font-size: 15px; color: var(--ink); background: #fff;
+}
+input:focus, textarea:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.15); }
+textarea { resize: vertical; }
+.form { display: flex; flex-direction: column; gap: 14px; }
+.form label { display: flex; flex-direction: column; gap: 6px; font-weight: 700; font-size: 14px; color: var(--ink); }
+.form-actions { display: flex; justify-content: flex-end; gap: 8px; }
+.msg { margin: 0; padding: 10px 12px; border-radius: 8px; font-size: 14px; }
+.msg-error { background: #fee2e2; color: var(--red-dark); }
+.msg-ok { background: #dcfce7; color: #166534; margin-bottom: 16px; }
+
+/* ===== 로그인/회원가입 ===== */
+.auth-card { max-width: 420px; margin: 24px auto; padding: 32px 28px; border-top: 8px solid var(--blue); }
+.auth-badge {
+  display: inline-block; background: var(--yellow); color: var(--ink); font-weight: 900;
+  font-size: 11px; letter-spacing: 2px; padding: 4px 10px; border-radius: 6px;
+}
+.auth-title { font-family: 'Black Han Sans', sans-serif; font-weight: 400; font-size: 30px; margin: 10px 0 4px; }
+.auth-sub { margin: 0 0 22px; color: var(--muted); }
+.auth-footer { margin: 20px 0 0; text-align: center; font-size: 14px; color: var(--muted); }
+.auth-footer a { font-weight: 700; color: var(--red); }
+
+/* ===== 패널 (글쓰기/운동기록) ===== */
+.panel { padding: 24px; margin-bottom: 20px; }
+.panel-title { font-size: 20px; font-weight: 900; margin-bottom: 18px; padding-left: 12px; border-left: 6px solid var(--red); }
+.file-field { display: flex; flex-direction: column; gap: 8px; font-weight: 700; font-size: 14px; color: var(--ink); }
+.file-btn { align-self: flex-start; }
+.image-preview { display: flex; align-items: flex-end; gap: 10px; }
+.image-preview img { max-height: 200px; border-radius: 10px; border: 2px solid var(--line); }
+
+/* ===== 게시글 상세 ===== */
+.detail { padding: 28px; }
+.back { display: inline-block; font-size: 14px; font-weight: 700; margin-bottom: 14px; }
+.detail-head { border-bottom: 2px solid var(--ink); padding-bottom: 14px; }
+.detail-title { font-size: clamp(22px, 3vw, 28px); font-weight: 900; line-height: 1.35; }
+.detail-meta { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-top: 10px; font-size: 14px; color: var(--muted); }
+.author-chip { background: var(--blue-soft); color: var(--blue); font-weight: 700; padding: 2px 10px; border-radius: 999px; }
+.detail-body { padding: 24px 0; min-height: 160px; }
+.detail-img { display: block; max-height: 480px; border-radius: 12px; margin-bottom: 18px; }
+.detail-content { white-space: pre-wrap; margin: 0; font-size: 16px; color: var(--ink); overflow-wrap: anywhere; }
+
+.reactions {
+  display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;
+  padding: 18px; background: #fffbea; border: 2px dashed var(--yellow); border-radius: var(--radius);
+}
+.like-btn { background: #fff; border-color: var(--red); color: var(--red); }
+.like-btn.liked { background: var(--red); color: #fff; }
+.rating-box { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.rating-label { font-size: 14px; }
+.rating-label strong { color: var(--ink); font-size: 18px; }
+.stars { display: flex; }
+.star { background: none; border: 0; font-size: 28px; line-height: 1; color: #d1d5db; cursor: pointer; padding: 0 2px; }
+.star.on { color: var(--yellow-dark); }
+.star:disabled { cursor: wait; }
+.owner-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
+
+.comments { margin-top: 28px; }
+.comments h2 { font-size: 18px; font-weight: 900; margin-bottom: 8px; }
+.comment-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.comment { padding: 14px 4px; border-bottom: 1px solid var(--line); }
+.comment-head { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+.comment-head strong { color: var(--ink); }
+.comment-date { color: var(--muted); font-size: 12px; }
+.comment-head .link-btn { margin-left: auto; }
+.comment p { margin: 4px 0 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.badge-writer { background: var(--yellow); color: var(--ink); font-size: 11px; font-weight: 700; padding: 1px 6px; border-radius: 4px; }
+.comment-form { display: flex; gap: 8px; margin-top: 14px; align-items: stretch; }
+.comment-form .btn { min-width: 80px; }
+
+/* ===== 운동기록 ===== */
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+.stat { border-radius: var(--radius); padding: 16px 18px; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+.stat span { font-size: 13px; font-weight: 700; opacity: 0.9; }
+.stat strong { font-family: 'Black Han Sans', sans-serif; font-weight: 400; font-size: 30px; }
+.stat-blue { background: var(--blue); color: #fff; }
+.stat-red { background: var(--red); color: #fff; }
+.stat-yellow { background: var(--yellow); color: var(--ink); }
+
+.workout-form { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+.workout-form label { display: flex; flex-direction: column; gap: 6px; font-weight: 700; font-size: 13px; color: var(--ink); grid-column: span 1; }
+.workout-form .wide { grid-column: span 2; }
+.workout-form .full { grid-column: 1 / -1; }
+.workout-form label:first-child { grid-column: span 1; }
+
+.log-day + .log-day { margin-top: 18px; }
+.log-date { font-size: 15px; color: var(--blue); margin-bottom: 6px; }
+.log-list { list-style: none; margin: 0; padding: 0; }
+.log-item {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  padding: 10px 12px; border-left: 4px solid var(--yellow); background: var(--bg); border-radius: 8px; margin-bottom: 6px;
+}
+.log-item strong { color: var(--ink); }
+.log-detail { color: var(--text); font-size: 14px; }
+.log-memo { color: var(--muted); font-size: 13px; }
+.log-item .link-btn { margin-left: auto; }
+
+/* ===== 모바일 ===== */
+@media (max-width: 720px) {
+  .header-inner { gap: 10px; }
+  .logo { font-size: 24px; }
+  .nav { order: 3; flex-basis: 100%; }
+  .header-user { margin-left: auto; }
+  .hero { padding: 22px 20px; }
+  .hero .btn { width: 100%; }
+  .board { padding: 16px; }
+  .search, .search input { width: 100%; }
+  .search input { flex: 1; }
+  .board-table thead { display: none; }
+  .board-table .col-no, .board-table .col-author, .board-table .col-date, .board-table .col-num { display: none; }
+  .board-table td { padding: 12px 4px; }
+  .mobile-meta { display: block; font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .detail { padding: 20px 16px; }
+  .reactions { flex-direction: column; gap: 12px; }
+  .comment-form { flex-direction: column; }
+  .stats { grid-template-columns: 1fr; }
+  .stat { flex-direction: row; justify-content: space-between; align-items: center; }
+  .workout-form { grid-template-columns: repeat(2, 1fr); }
+  .workout-form .wide, .workout-form label:first-child { grid-column: 1 / -1; }
+}
